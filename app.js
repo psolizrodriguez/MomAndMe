@@ -5,6 +5,7 @@
 var express = require('express'), 
 routes = require('./routes'), 
 kids = require('./routes/kids'), 
+symptoms = require('./routes/symptoms'), 
 http = require('http'), path = require('path');
 
 var app = express();
@@ -37,6 +38,9 @@ app.post("/logout", function(req, res) {
 	req.session = null;
 	res.send("Loged Out");
 });
+//symptoms
+app.get('/listSymptoms', symptoms.listSymptoms);
+
 
 // Create default user if is not created
 
