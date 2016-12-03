@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mom And Me</title>
+<link rel="stylesheet" href="styles/style.css">
+<link rel="stylesheet" href="styles/grid.css">
+<link rel="stylesheet" href="styles/children.css">
+<script src="scripts/jquery-3.1.1.js"></script>
+<link href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
+<script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+<script src="scripts/children.js"></script>
+</head>
+<body>
+	<header>
+		<!-- <h1>Mom And Me</h1> -->
+	</header>
+	<nav>Welcome to Mom And Me!</nav>
+	<main>
+	<div id="addKidForm" title="Register Baby" style="display: none">
+		<label>Name</label>
+		<input type="text" id="name" value="">
+		<label>Gender</label>
+		<input type="radio" name="gender" value="01" checked>
+		<span>Male</span>
+		<br>
+		<input type="radio" name="gender" value="02">
+		<span>Female</span>
+		<br>
+		<input type="radio" name="gender" value="03">
+		<span>Don't know yet</span>
+		<label>Due Date</label>
+		<input type="text" class="datePicker" id="dueDate" />
+		<span>mm/dd/yyyy</span>
+	</div>
+	<section class="title">
+		My Kids!
+		<button class="logOut" onclick="logOut()"></button>
+	</section>
+	<section class="mainform">
+		<section class="controls">
+			<button id="addKidButton"></button>
+		</section>
+		<section id="contentChildren" class="note-output"></section>
+		<section class="bottom"></section>
+	</section>
+	</main>
+	<footer>Copyright 2016 Developed by INTERNATIONAL Team</footer>
+</body>
+</html>

@@ -1,0 +1,148 @@
+html {
+	background-color: #BCF5B5;
+	font-size: 10pt;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+label {
+	display: block;
+	color: black;
+}
+
+nav {
+	width: 500px;
+	background-color: rgba(250, 250, 250, 0.5);
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2), inset 0px 1px 0px 0px
+		rgba(250, 250, 250, 0.5);
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	text-align: center;
+	margin: 10px auto;
+}
+
+.mainform {
+	width: 500px;
+	min-height: 200px;
+	background-image: url("../media/images/baby-shower-purple-body.jpg");
+	background-size: contain;
+	background-position: center;
+	background-repeat: repeat;
+	text-align: center;
+	margin: 10px auto;
+}
+
+.note-output {
+	max-width: 300px;
+	min-height: 200px;
+	margin: 10px auto;
+	text-align: center;
+}
+
+.title {
+	width: 500px;
+	min-height: 25px;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: bold;
+	font-size: large;
+	margin: 10px auto;
+}
+
+.kid01 {
+	background-color: #9ab7f9;
+}
+
+.kid02 {
+	background-color: #efd0e4;
+}
+
+.kid03 {
+	background-color: #e7efd0;
+}
+
+.controls {
+	min-height: 120px;
+	background-image: url("../media/images/baby-shower-purple.jpg");
+	background-size: 100%;
+	background-position: top;
+	background-repeat: no-repeat;
+	text-align: left;
+}
+
+#addKidButton {
+	height: 25px;
+	width: 25px;
+	background-color: rgba(250, 250, 250, 0.5);
+	background-image:
+		url("../media/images/120px-Fairytale_button_add.svg.png");
+	background-size: contain;
+	border-radius: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	text-align: center;
+	margin: 70px 0px 0px 100px;
+	cursor: pointer;
+}
+
+.logOut {
+	height: 25px;
+	width: 25px;
+	background-color: rgba(250, 250, 250, 0.5);
+	background-image: url("../media/images/LogoutIcon.jpg");
+	background-size: contain;
+	border-radius: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	text-align: center;
+	cursor: pointer;
+	float: right;
+}
+.logOut:HOVER {
+	opacity: 0.7;
+}
+#addKidButton:HOVER {
+	opacity: 0.7;
+}
+
+/* note delete button */
+button.note-delete {
+	height: 25px;
+	width: 25px;
+	background-color: rgba(250, 250, 250, 0.5);
+	background-image: url("../media/images/delete.jpg");
+	background-size: contain;
+	border-radius: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	display: inline-block;
+	float: left;
+	margin: -5px 0px 0px -5px;
+}
+
+button.note-delete:HOVER {
+	opacity: 0.7;
+}
+
+.bottom {
+	min-height: 50px;
+	background-image: url("../media/images/baby-shower-purple.jpg");
+	background-size: 100%;
+	background-position: bottom;
+	background-repeat: no-repeat;
+}
+
+footer {
+	width: 500px;
+	background-color: rgba(250, 250, 250, 0.5);
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2), inset 0px 1px 0px 0px
+		rgba(250, 250, 250, 0.5);
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	text-align: center;
+	margin: 10px auto;
+}
+
+.ui-widget-overlay {
+	opacity: .50 !important;
+	/* Make sure to change both of these, as IE only sees the second one */
+	filter: Alpha(Opacity = 50) !important;
+	background-color: rgb(50, 50, 50) !important;
+	/* This will make it darker */
+}

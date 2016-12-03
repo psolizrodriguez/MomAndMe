@@ -1,0 +1,67 @@
+/* heading styles */
+h1, h3, h5 {
+	padding: 5px;
+	margin: 10px 0 10px 0;
+}
+/* heading 3 */
+h3 {
+	font-size: 1.75em;
+}
+/* heading 5 */
+h5 {
+	font-size: 1.25em;
+}
+/* site header */
+header {
+	border-bottom: 1px solid #dedede;
+}
+/* site header paragraph */
+header p {
+	font-size: 1.25em;
+	font-style: italic;
+}
+/* default button style */
+button {
+	padding: 2px;
+	margin: 2px;
+	border-radius: 0;
+	border: 1px solid #dedede;
+	cursor: pointer;
+}
+/* default button hover style */
+button:hover {
+	background-color: #aaa;
+	color: #fff;
+}
+/* input field for note */
+.note-input input {
+	width: 40%;
+}
+/* note controls */
+.note-controls {
+	border-bottom: 1px solid #dedede;
+	display: none;
+}
+/* note paragraph output */
+.note-output p {
+	margin: 10px;
+	padding: 10px;
+	cursor: pointer;
+	border: 1px solid #1a3852;
+}
+/* note paragraph output hover */
+.note-output p:hover {
+	border: 2px solid #1a3852;
+	font-weight: bold;
+}
+
+/* add some flex with items*/
+.flex-container {
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+/* flex item */
+.flex-item {
+	flex-grow: 1; /* all items will be equal */
+}

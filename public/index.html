@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mom And Me</title>
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/style.css">
+<link rel="stylesheet" href="styles/grid.css">
+<link rel="stylesheet" href="styles/children.css">
+<script src="scripts/jquery-3.1.1.js"></script>
+<link href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
+<script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+<script src="scripts/login.js"></script>
+</head>
+<body>
+	<header>
+		<!-- <h1>Mom And Me</h1> -->
+	</header>
+	<nav></nav>
+	<main>
+	<section class="loginform cf">
+		<form name="login" action="index_submit" method="get" accept-charset="utf-8">
+			<ul>
+				<li>
+					<label for="usermail">Email</label>
+					<input type="email" id="userName" placeholder="yourname@email.com" required>
+				</li>
+				<li>
+					<label for="password">Password</label>
+					<input type="password" id="password" placeholder="password" required>
+				</li>
+				<li>
+					<input type="button" value="Login" onclick="verifyLogin()">
+				</li>
+			</ul>
+		</form>
+	</section>
+	</main>
+	<footer>Copyright 2016 Developed by INTERNATIONAL Team</footer>
+</body>
+</html>
