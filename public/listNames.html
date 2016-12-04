@@ -5,13 +5,16 @@
 <title>Mom And Me</title>
 <link rel="stylesheet" href="styles/style.css">
 <link rel="stylesheet" href="styles/grid.css">
-<link rel="stylesheet" href="styles/children.css">
+<link rel="stylesheet" href="styles/names.css">
 <script src="scripts/jquery-3.1.1.js"></script>
 <link href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
 <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
-<script src="scripts/children.js"></script>
+<script src="scripts/names.js"></script>
 </head>
 <body>
+	<div id="addNameForm" title="Register Name" style="display: none">
+		
+	</div>
 	<header>
 		<!-- <h1>Mom And Me</h1> -->
 	</header>
@@ -25,15 +28,12 @@
 		<a href="listNames.html">Baby Names</a>
 	</nav>
 	<main>
-	<section class="title">My Calendar!</section>
+	<section class="title">Names for Baby</section>
 	<section class="mainform">
 		<section class="controls">
+			<button id="addKidButton"></button>
 		</section>
-		<section id="contentChildren" class="note-output">
-			<p class="flex-item">
-				Week 1
-			</p>
-		</section>
+		<section id="contentChildren" class="note-output"></section>
 		<section class="bottom"></section>
 	</section>
 	</main>

@@ -5,7 +5,8 @@
 var express = require('express'), 
 routes = require('./routes'), 
 kids = require('./routes/kids'), 
-symptoms = require('./routes/symptoms'), 
+symptoms = require('./routes/symptoms'),
+names = require('./routes/names'),
 http = require('http'), path = require('path');
 
 var app = express();
@@ -40,6 +41,10 @@ app.post("/logout", function(req, res) {
 });
 //symptoms
 app.get('/listSymptoms', symptoms.listSymptoms);
+app.get('/listNames', names.listNames);
+app.post('/saveName', names.saveName);
+app.post("/deleteName", names.deleteName);
+app.get('/listPossibleNames', names.listPossibleNames);
 
 
 // Create default user if is not created
