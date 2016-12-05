@@ -42,7 +42,7 @@ app.post("/logout", function(req, res) {
 	res.send("Loged Out");
 });
 // symptoms
-app.get('/listSymptoms', symptoms.listSymptoms);
+app.post('/listSymptoms', symptoms.listSymptoms);
 app.get('/listNames', names.listNames);
 app.post('/saveName', names.saveName);
 app.post("/deleteName", names.deleteName);

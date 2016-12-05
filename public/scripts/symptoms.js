@@ -1,17 +1,44 @@
 $(function() {
 	refreshListSymptoms();
 });
-function refreshListSymptoms() {
-	$.getJSON("listSymptoms", function(response) {
+var dataByLetter = {};
+function refreshListSymptoms(letter) {
+	if(letter == 'undefined' || letter == null){
+		letter = "A";
+	}
+	$.post("listSymptoms",{'letter' : letter}, function(response) {
 		buildNote(response);
 	});
 }
 
 function buildNote(data) {
 	$(".note-output").empty();
+	dataByLetter = {};
 	for (var int = 0; int < data.length; int++) {
 		var array_element = data[int];
-		$(".note-output").append($('<p>').html(array_element.title));
+		dataByLetter[array_element._id] = array_element;
+		$(".note-output").append(
+				$(
+						'<p onclick="refreshingContent(\'' + array_element._id
+								+ '\')">').html(array_element.title));
 	}
+	$('#catalogContent').hide();
+	$('#contentChildren').show();
+	
+}
+function goBackToList(){
+	$('#catalogContent').hide();
+	$('#contentChildren').show();
+	$('#backButton').hide();
+	
+}
+function refreshingContent(id) {
+	var currentArticle = dataByLetter[id];
+	$('#symptomsTitle').html(currentArticle.title);
+	$('#symptomsImgUrl').attr('src', 'symptom_' + id);
+	$('#symptomContent').html(currentArticle.content);
 
+	$('#contentChildren').hide();
+	$('#catalogContent').show();
+	$('#backButton').show();
 }

@@ -16,18 +16,31 @@
 		<!-- <h1>Mom And Me</h1> -->
 	</header>
 	<nav>
-		<a href="listChildren.html">My Kids</a>
-		|
-		<a href="listWeeks.html">My Weeks</a>
-		|
-		<a href="listSymptoms.html">Symptoms</a>
+		<a href="listChildren.html">My Kids</a> | <a href="listWeeks.html">My
+			Weeks</a> | <a href="listSymptoms.html">Symptoms</a>
+	</nav>
+	<nav>
+		<a href="javascript:refreshListSymptoms('A')">A</a> | <a  href="javascript:refreshListSymptoms('B')">B</a> | <a href="">C</a> | <a href="">D</a>
+		| <a href="">E</a> | <a href="">F</a>
 	</nav>
 	<main>
 	<section class="title">Symptoms Mom</section>
 	<section class="mainform">
-		<section class="controls"></section>
-		<section id="contentChildren" class="note-output"></section>
+
+		<section class="controls"><button id="backButton" onclick="goBackToList()" style="display: none">Back</button></section>
+		<section id="contentChildren" class="note-output"
+			onclick="showCatalogDetails()"></section>
+
+		<section id="catalogContent" class="content-output" style="display: none">
+			<article>
+				<h1 id="symptomsTitle"></h1>
+				<img id="symptomsImgUrl" src="../media/images/nutrition.jpg"></img>
+				<p id="symptomContent"></p>
+			</article>
+		</section>
+
 		<section class="bottom"></section>
+
 	</section>
 	</main>
 	<footer>Copyright 2016 Developed by INTERNATIONAL Team</footer>

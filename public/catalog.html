@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Mom And Me</title>
+<link rel="stylesheet" href="styles/style.css">
+<link rel="stylesheet" href="styles/grid.css">
+<link rel="stylesheet" href="styles/catalog.css">
+<script src="scripts/jquery-3.1.1.js"></script>
+<link href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
+<script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+<script src="routes/symptoms.js"></script>
+<script src="scripts/symptoms.js"></script>
+</head>
+<body>
+<header>
+		<!-- <h1>Mom And Me</h1> -->
+	</header>
+	<nav>
+		<a href="listChildren.html">My Kids</a>
+		|
+		<a href="listWeeks.html">My Weeks</a>
+		|
+		<a href="listSymptoms.html">Symptoms</a>
+	</nav>
+	<nav>
+		<a href="javascript:refreshCatalogList('A')">A</a>
+		|
+		<a href="javascript:refreshCatalogList('B')">B</a>
+		|
+		<a href="javascript:refreshCatalogList('C')">C</a>
+		|
+		<a href="javascript:refreshCatalogList('D')">D</a>
+		|
+		<a href="javascript:refreshCatalogList('E')">E</a>
+		|
+		<a href="javascript:refreshCatalogList('F')">F</a>
+	</nav>
+<main>
+<section class="title">Symptoms Catalog</section>
+
+	<section class="mainform">
+	
+	<section class="controls"></section>
+	
+		<section id="listSymptoms">
+			<p class="c" onclick="showCatalogDetails('1')"></p>
+		</section>
+
+		<section id="catalogContent" class="note-output" style="display: none">
+			<p id="title">title</p>
+			<div id="content">content</div>
+		</section>
+		
+	<section class="bottom"></section>
+		
+	</section>
+</main>
+<footer>Copyright 2016 Developed by INTERNATIONAL Team</footer>
+</body>
+</html>
