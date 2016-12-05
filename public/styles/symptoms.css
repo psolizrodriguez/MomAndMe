@@ -1,5 +1,5 @@
 html {
-	background-color: #BCF5B5;
+	background-color: lightblue;
 	font-size: 10pt;
 	font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
@@ -145,4 +145,21 @@ footer {
 	filter: Alpha(Opacity = 50) !important;
 	background-color: rgb(50, 50, 50) !important;
 	/* This will make it darker */
+}
+#symptomContent{
+	color: #AACCFF;
+	font-family: "Times New Roman";
+    font-size: 120%;
+    padding: 28px;
+    border: 5px solid green;
+    background-color: #222233;
+    width: 300px;
+    margin: 65px;
+}
+#symptomsImgUrl{
+    height: 205px;
+    width: 305px;
+}
+#backButton{
+	padding: 65px;
 }

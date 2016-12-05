@@ -34,8 +34,13 @@ function goBackToList(){
 }
 function refreshingContent(id) {
 	var currentArticle = dataByLetter[id];
+	dataByLetter[currentArticle._id] = currentArticle;
 	$('#symptomsTitle').html(currentArticle.title);
-	$('#symptomsImgUrl').attr('src', 'symptom_' + id);
+	//$('#symptomsImgUrl').attr('src', 'symptom_' + id);
+	
+	$('#imageContent').append($('#symptomsImgUrl').html(
+			$('<p onclick="refreshingContent(\'' + currentArticle._id+ '\')">').attr('src','symptom_'+id)));
+	
 	$('#symptomContent').html(currentArticle.content);
 
 	$('#contentChildren').hide();
