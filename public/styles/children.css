@@ -161,3 +161,12 @@ footer {
 .labelDialog {
 	font-weight: bold;
 }
+#male{
+	color:blue;
+}
+#female{
+	color:pink;
+}
+#idk{
+	color:green;
+}

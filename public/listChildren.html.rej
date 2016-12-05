@@ -1,0 +1,10 @@
+diff a/public/listChildren.html b/public/listChildren.html	(rejected hunks)
+@@ -29,7 +29,7 @@
+ 		<br>
+ 		<input type="radio" name="gender" value="03">
+ 		<span>Don't know yet</span>
+-		<label>Due Date</label>
++		<label class="labelDialog">Due Date</label>
+ 		<input type="text" class="datePicker" id="dueDate" />
+ 		<span>mm/dd/yyyy</span>
+ 	</div>
