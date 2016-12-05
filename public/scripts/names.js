@@ -1,6 +1,7 @@
 var callBack;
 var callBackDelete;
 var deleteMessage;
+var namesOnList;
 $(function() {
 	initializeInsertKidDialog();
 	refreshListNames();
@@ -45,27 +46,28 @@ function buildPossibleNames(data) {
 	table.append(tableHeader);
 	for (var int = 0; int < data.length; int++) {
 		var array_element = data[int];
-		var tr = $('<tr>');
-		var colCheckBox = $('<td class="checkBoxTable">');
-		var checkbox = $('<input type="checkbox" onclick="savePossibleName(\''
-				+ array_element.name
-				+ '\')">');
-		colCheckBox.append(checkbox);
-		var colName = $('<td class="BabyName">');
-		
-		var BabyCol = $('<td>');
-		var MeaningCol =  $('<td>');
-		BabyCol.html(array_element.name); 
-		MeaningCol.html(array_element.meaning);
-		colName.append(BabyCol);
-		tr.append(colCheckBox);
-		tr.append(BabyCol);
-		tr.append(MeaningCol);
-		table.append(tr);
+		if (namesOnList.indexOf(array_element.name) == -1) {
+			var tr = $('<tr>');
+			var colCheckBox = $('<td class="checkBoxTable">');
+			var checkbox = $('<input type="checkbox" onclick="savePossibleName(\''
+					+ array_element.name + '\')">');
+			colCheckBox.append(checkbox);
+			var colName = $('<td class="BabyName">');
+
+			var BabyCol = $('<td>');
+			var MeaningCol = $('<td>');
+			BabyCol.html(array_element.name);
+			MeaningCol.html(array_element.meaning);
+			colName.append(BabyCol);
+			tr.append(colCheckBox);
+			tr.append(BabyCol);
+			tr.append(MeaningCol);
+			table.append(tr);
+		}
 	}
 	$("#addNameForm").append(table);
 }
-//Code for deleting names
+// Code for deleting names
 function deleteRecordName(idDelete) {
 	event.stopPropagation();
 	deleteMessage.dialog('open');
@@ -79,9 +81,9 @@ function deleteRecordName(idDelete) {
 	}
 }
 
-function savePossibleName(nameToSave){
-	//var description = $("#description").val();
-	//var rating = $('input:radio[name=rating]:checked').val();
+function savePossibleName(nameToSave) {
+	// var description = $("#description").val();
+	// var rating = $('input:radio[name=rating]:checked').val();
 	// create new Name
 	var newName = {
 		"description" : nameToSave,
@@ -89,31 +91,38 @@ function savePossibleName(nameToSave){
 	};
 	// post new note to server
 	$.post("/saveName", newName, function(response) {
-		//buildNote(response);
+		// buildNote(response);
 	})
 }
 function buildNote(data) {
+	namesOnList = [];
 	$(".note-output").empty();
 	for (var int = 0; int < data.length; int++) {
 		var array_element = data[int];
-		$(".note-output").append($('<p>').html(array_element.description).append(
-				$('<button class="note-delete" onclick="deleteRecordName(\''
-						+ array_element._id
-						+ '\')"></button>')));
+		namesOnList[int] = array_element.description;
+		
+		$(".note-output")
+				.append(
+						$('<p>')
+								.html(array_element.description)
+								.append(
+										$('<button class="note-delete" onclick="deleteRecordName(\''
+												+ array_element._id
+												+ '\')"></button>')));
 	}
 }
-//Code fro adding the Open dialog on click to button
+// Code fro adding the Open dialog on click to button
 function initializeControls() {
 	$("#addKidButton").click(function() {
-		
-		//Pull name suggestions for babies
+
+		// Pull name suggestions for babies
 		$.getJSON("listPossibleNames", function(response) {
 			buildPossibleNames(response);
 		});
 		$('#addNameForm').dialog('open');
 	});
 }
-//Code for Initializing Names Insert Form
+// Code for Initializing Names Insert Form
 function initializeInsertKidDialog() {
 	var addNameForm = $('#addNameForm');
 	addNameForm.dialog({
@@ -124,17 +133,13 @@ function initializeInsertKidDialog() {
 			'Save' : function() {
 				refreshListNames();
 				$(this).dialog("close");
-				/*var description = $("#description").val();
-				var rating = $('input:radio[name=rating]:checked').val();
-				// create new Name
-				var newName = {
-					"description" : description,
-					"rating" : rating
-				};
-				// post new note to server
-				$.post("/saveName", newName, function(response) {
-					buildNote(response);
-				})*/
+				/*
+				 * var description = $("#description").val(); var rating =
+				 * $('input:radio[name=rating]:checked').val(); // create new
+				 * Name var newName = { "description" : description, "rating" :
+				 * rating }; // post new note to server $.post("/saveName",
+				 * newName, function(response) { buildNote(response); })
+				 */
 			},
 			'Cancel' : function() {
 				$(this).dialog("close");

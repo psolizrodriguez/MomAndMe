@@ -46,7 +46,7 @@ exports.deleteName = function(req, res) {
 			console.log(error);
 			res.send("error reported");
 		} else {
-			Names.find({}, function(error, result) {
+			Name.find({}, function(error, result) {
 				// add some error checking...
 				res.json(result);
 			});
