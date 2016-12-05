@@ -35,6 +35,7 @@ function initializeInsertKidDialog() {
 			var name = $("#name").val();
 			var gender = $('input:radio[name=gender]:checked').val();
 			var dueDate = $("#dueDate").datepicker("getDate");
+			//createWeeks(dueDate);
 			// create new note
 			var newKid = {
 				"name" : name,

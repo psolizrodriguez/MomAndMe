@@ -1,9 +1,9 @@
 /*
  * GET users listing.
  */
+var weeks = require("./weeks.js");
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/424db1');
 var KidSchema = mongoose.Schema({
 	"user" : String,
 	"name" : String,
@@ -25,14 +25,16 @@ exports.saveKid = function(req, res) {
 		"dueDate" : req.body.dueDate,
 	});
 	console.log(newKid);
-	newKid.save(function(error, result) {
+	newKid.save(function(error, resultKid) {
 		if (error !== null) {
 			console.log(error);
 			res.send("error reported");
 		} else {
+			//createWeeks(req.body.dueDate, req, res);
 			Kid.find({}, function(error, result) {
+
 				// add some error checking...
-				res.json(result);
+				res.json(weeks.createWeeks(resultKid._id, req.body.dueDate,result));
 			});
 		}
 	});
@@ -54,6 +56,6 @@ exports.deleteKid = function(req, res) {
 	});
 };
 exports.setKidId = function(req, res) {
-	req.session.user = req.body.id;
+	req.session.kidSelected = req.body.id;
 	res.json(true);
 };
