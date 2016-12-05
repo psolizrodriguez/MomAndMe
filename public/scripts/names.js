@@ -37,13 +37,33 @@ function refreshListNames() {
 
 function buildPossibleNames(data) {
 	$("#addNameForm").empty();
+	var table = $('<table border="1">');
+	var tableHeader = $('<tr>');
+	tableHeader.append($('<th>').html("*"));
+	tableHeader.append($('<th>').html("Name"));
+	tableHeader.append($('<th>').html("Meaning"));
+	table.append(tableHeader);
 	for (var int = 0; int < data.length; int++) {
 		var array_element = data[int];
-		$("#addNameForm").append($('<p>').html(array_element.name).append(
-				$('<input type="checkbox" onclick="savePossibleName(\''
-						+ array_element.name
-						+ '\')">')));
+		var tr = $('<tr>');
+		var colCheckBox = $('<td class="checkBoxTable">');
+		var checkbox = $('<input type="checkbox" onclick="savePossibleName(\''
+				+ array_element.name
+				+ '\')">');
+		colCheckBox.append(checkbox);
+		var colName = $('<td class="BabyName">');
+		
+		var BabyCol = $('<td>');
+		var MeaningCol =  $('<td>');
+		BabyCol.html(array_element.name); 
+		MeaningCol.html(array_element.meaning);
+		colName.append(BabyCol);
+		tr.append(colCheckBox);
+		tr.append(BabyCol);
+		tr.append(MeaningCol);
+		table.append(tr);
 	}
+	$("#addNameForm").append(table);
 }
 //Code for deleting names
 function deleteRecordName(idDelete) {
