@@ -61,7 +61,7 @@ exports.createWeeks = function(kidId, currentDate, resultsKids) {
 		var final = new Date(currentDate).setDate(new Date(currentDate).getDate() - (weeksMax - 1) * 7);
 		var newWeek = new Week({
 			"kid" : kidId,
-			"description" : "Week " + weeksCounter,
+			"description" : "",
 			"order" : weeksCounter,
 			"initialDate" : initial,
 			"finalDate" : final

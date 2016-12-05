@@ -152,3 +152,8 @@ footer {
 .selectedWeek {
 	background-color: lime;
 }
+
+.ui-dialog {
+	font-size: 9pt;
+	font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+}

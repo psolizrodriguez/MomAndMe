@@ -8,6 +8,7 @@ kids = require('./routes/kids'),
 symptoms = require('./routes/symptoms'), 
 names = require('./routes/names'), 
 weeks = require('./routes/weeks'), 
+nutrition = require('./routes/nutrition'), 
 http = require('http'), 
 path = require('path');
 
@@ -49,6 +50,7 @@ app.post("/deleteName", names.deleteName);
 app.get('/listPossibleNames', names.listPossibleNames);
 app.post('/listWeeks', weeks.listWeeks);
 app.post('/updateComment', weeks.updateComment);
+app.post('/listNutrition', nutrition.listNutrition);
 
 
 
