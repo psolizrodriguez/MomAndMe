@@ -15,10 +15,13 @@ var Week = mongoose.model("Weeks", WeekSchema);
 exports.listWeeks = function(req, res) {
 	var kid_id = req.session.kidSelected;
 	console.log('kid_id = ' + kid_id);
-	
-	Week.find({ kid : kid_id}, function(error, listResult) {
+	Week.find({
+		kid : kid_id
+	}, function(error, listResult) {
 		res.json(listResult);
-	}).sort({'order':1});
+	}).sort({
+		'order' : 1
+	});
 };
 
 function addDays(date, days) {
@@ -26,7 +29,30 @@ function addDays(date, days) {
 	result.setDate(result.getDate() + days);
 	return result;
 }
+// Update Comment
+exports.updateComment = function(req, res) {
+	var id = req.body.id;
+	var comment = req.body.comment;
+	Week.update({
+		_id : id
+	}, {
+		description : comment
+	}, function(err) {
+		if (err) {
+			return next(err);
+		} else {
+			return true;
+		}
 
+	});
+	Week.find({
+		_id : id
+	}, function(error, listResult) {
+		res.json(listResult[0]);
+	});
+
+};
+// Update Comment
 exports.createWeeks = function(kidId, currentDate, resultsKids) {
 	var weeksMax = 40;
 	var weeksCounter = 1;

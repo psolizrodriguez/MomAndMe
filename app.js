@@ -48,6 +48,7 @@ app.post('/saveName', names.saveName);
 app.post("/deleteName", names.deleteName);
 app.get('/listPossibleNames', names.listPossibleNames);
 app.post('/listWeeks', weeks.listWeeks);
+app.post('/updateComment', weeks.updateComment);
 
 
 
