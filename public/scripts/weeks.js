@@ -80,7 +80,9 @@ function editComment(id) {
 			$.post("/updateComment", auxObject, function(response) {
 				// update content of note
 				console.log(response);
-				$('#' + id).html(response.description);
+				//$('#' + id).html(response.description);
+				$('#' + id).html(comment);
+				
 			});
 
 		}

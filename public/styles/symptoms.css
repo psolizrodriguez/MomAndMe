@@ -156,7 +156,11 @@ footer {
     width: 300px;
     margin: 65px;
 }
-#symptomsImgUrl{
+.symptomsImgUrl{
+    height: 205px;
+    width: 305px;
+}
+.symptomsImgUrl{
     height: 205px;
     width: 305px;
 }

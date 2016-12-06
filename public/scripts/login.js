@@ -2,10 +2,12 @@ $(function() {
 	addDeleteConfirmationMessage();
 });
 function showAlertMessage(message) {
+	hideAjaxBlockDialog();
 	$("#errorMessage").html(message);
 	alertMessage.dialog('open');
 }
 function closeAlertMessage() {
+	hideAjaxBlockDialog();
 	alertMessage.dialog('close');
 }
 var alertMessage = $('<div id="deleteConfirm" title="Error Found"><label id="errorMessage"></label></div>');
@@ -16,20 +18,23 @@ function addDeleteConfirmationMessage() {
 		resizable : false,
 		buttons : {
 			'OK' : function() {
+				hideAjaxBlockDialog();
 				$(this).dialog("close");
-
 			}
 		}
 	});
 }
 
 function verifyLogin() {
+	showAjaxBlockDialog();
 	var email = $("#userName").val();
 	var password = $("#password").val();
-	if (email.lenght == 0) {
+	if (email == '') {
+		hideAjaxBlockDialog();
 		showAlertMessage("Email must not be empty");
 	} else {
-		if (password.lenght == 0) {
+		if (password == '') {
+			hideAjaxBlockDialog();
 			showAlertMessage("Password must not be empty");
 		} else {
 			$.post("/verifyLogin", {
@@ -37,7 +42,11 @@ function verifyLogin() {
 				password : password
 			}, function(response) {
 				if (response) {
-					window.location = 'listChildren.html';
+					showAlertMessage("Welcome to Mom And Me!");
+					setTimeout(function() {
+						window.location = 'listChildren.html';
+					}, 1000);
+
 				} else {
 					showAlertMessage("Email or Password do not match");
 				}

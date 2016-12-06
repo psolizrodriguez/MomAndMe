@@ -1,0 +1,14 @@
+@CHARSET "ISO-8859-1";
+
+.no-close {
+	background: transparent;
+	border: none;
+}
+
+.no-close .ui-dialog-titlebar {
+	display: none;
+}
+.ui-dialog{
+	border: none !important;
+	outline-width: 0px !important;
+}
