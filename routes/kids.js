@@ -12,6 +12,8 @@ var KidSchema = mongoose.Schema({
 });
 var Kid = mongoose.model("Kid", KidSchema);
 exports.listKids = function(req, res) {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "X-Requested-With");
 	Kid.find({}, function(error, kid) {
 		// add some error checking...
 		res.json(kid);
